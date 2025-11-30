@@ -20,4 +20,13 @@ output = number can not be negative
 class Solution:
 
     def find_tailing_zeroes(self, number: int) -> int | str:
-        pass
+        if number < 0:
+            return "number can not be negative"
+
+        count = 0
+        divisor = 5
+
+        while number // divisor > 0:
+            count += number // divisor
+            divisor *= 5
+        return count
